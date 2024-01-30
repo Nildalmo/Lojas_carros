@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { FormEvent } from "react";
-import Cadastro from "@/components/Cadastro";
+import SearchBar from "@/components/SearchBar";
 
 export default function login() {
   const router = useRouter();
@@ -10,5 +10,8 @@ export default function login() {
     throw new Error("Function not implemented.");
   }
 
-  return <Cadastro />;
+  return (
+    <SearchBar/>
+  
+     );
 }

@@ -12,9 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <StyledComponentsRegistry>
-        <body>{children}</body>
-      </StyledComponentsRegistry>
+      <body>
+        <StyledComponentsRegistry>
+          {children}
+          </StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

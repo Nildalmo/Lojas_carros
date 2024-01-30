@@ -1,4 +1,5 @@
 import StyledComponentsRegistry from "@/app/regystry";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import GlobalStyles from "@/styles/global";
 
@@ -14,13 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>
-        <StyledComponentsRegistry>
-          <GlobalStyles />
-          <Header />
-          {children}
-        </StyledComponentsRegistry>
-      </body>
+      <StyledComponentsRegistry>
+        <GlobalStyles />
+        <Header />
+        {children}
+        <Footer />
+      </StyledComponentsRegistry>
     </html>
   );
 }

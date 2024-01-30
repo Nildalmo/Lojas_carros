@@ -1,27 +1,32 @@
 "use client";
+
 import React, { useState } from "react";
 import { BsArrowBarRight } from "react-icons/bs";
-import { Div } from "./forms.style";
-import Link from "next/link";
-import { login } from "@/login.service";
+import { Div } from "./validacao.style";
 
 export function Login() {
+  const [nome, setnome] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const handlelogin = async () => {
-    console.log("login");
-    const response = await login({ email, password });
-    console.log(response);
-    window.location.href = "/";
-  };
+  const [passwordconfirmation, setpasswordconfirmation] = useState("");
   return (
     <header>
       <Div className="Container">
         <header className="header">
           <img src="/logo.png" alt="" />
-          <text>Por favor digite seu login para o seu acesso!</text>
+          <span>Cadastre-se</span>
         </header>
         <form>
+          <div>
+            <label htmlFor="nome">Nome: </label>
+            <input
+              type="nome"
+              id="nome"
+              placeholder="Seu Nome..."
+              onChange={(event) => setnome(event.target.value)}
+            />
+          </div>
+
           <div>
             <label htmlFor="email">Email: </label>
             <input
@@ -30,7 +35,9 @@ export function Login() {
               placeholder="Seu email..."
               onChange={(event) => setemail(event.target.value)}
             />
+          </div>
 
+          <div>
             <label htmlFor="password"> Senha: </label>
             <input
               type="password"
@@ -40,15 +47,20 @@ export function Login() {
             />
           </div>
 
-          <Link href="/forgotpassword">Esqueceu sua senha?</Link>
-          <p></p>
+          <div>
+            <label htmlFor="passwordconfirmation"> Confirme Senha: </label>
+            <input
+              type="passwordconfirmation"
+              id="passwordconfirmation"
+              placeholder="Sua senha..."
+              onChange={(event) => setpasswordconfirmation(event.target.value)}
+            />
+          </div>
 
-          <Link href="/cadastro">Ainda não possui conta?</Link>
+          <button type="submit">
+            Entrar <BsArrowBarRight />
+          </button>
         </form>
-
-        <button onClick={handlelogin} type="button">
-          Entrar <BsArrowBarRight />
-        </button>
       </Div>
     </header>
   );

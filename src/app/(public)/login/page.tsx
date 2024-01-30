@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { FormEvent } from "react";
-import Link from "next/link";
 import Login from "@/components/Login";
 
 export default function login() {
@@ -11,7 +10,5 @@ export default function login() {
     throw new Error("Function not implemented.");
   }
 
-  return (
-    <Login/>
-     );
+  return <Login />;
 }

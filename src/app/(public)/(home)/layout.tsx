@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import GlobalStyles from "@/styles/global";
-
 import Header from "@/components/Header";
 import StyledComponentsRegistry from "@/app/regystry";
+import Footer from "@/components/Footer";
+import SearchBar from "@/components/SearchBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +18,12 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-         
-          <StyledComponentsRegistry>
+        <StyledComponentsRegistry>
           <GlobalStyles />
           <Header />
+          <SearchBar />
           {children}
+          <Footer />
         </StyledComponentsRegistry>
       </body>
     </html>
